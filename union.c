@@ -1,3 +1,14 @@
+/*
+0.In union the last members handled only by union .
+1.Union is a user defined data type in c programming.
+2.In union members can uses a single shared memory location  at once.
+3.We use keyword union to define a union.
+4.we use dot(.)operator to access the members of a union.
+5.Write a program to union about a student details?
+*/
+
+
+
 #include <stdio.h>
 #include <string.h>
 union student
@@ -21,3 +32,10 @@ void main()
     printf(" Marks of the stduent : %f\n", s1.marks);
     printf(" college of the stduent : %s\n", s1.clg);
 }
+/*
+OUTPUT:
+ Id of the stduent : 1397571923
+ Name of the stduent : SAMS
+ Marks of the stduent : 881564254208.000000
+ college of the stduent : SAMS
+ */
