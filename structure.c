@@ -3,6 +3,7 @@
 2.It's usually used when we want to store dissimilar data together.
 3.The keyword 'struct' should be used to define variables of structure type.
 4.Dot(.)is called as structure member operator.
+5.Write a program to using structure about details of a student ?
 */
 
 #include <stdio.h>
