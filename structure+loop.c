@@ -62,7 +62,9 @@ int main()
     }
     return 0;
 }
-/*Enter driver details  
+/*
+OUTPUT:
+Enter driver details  
 
 driver:1 
 
