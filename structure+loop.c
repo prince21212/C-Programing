@@ -19,6 +19,11 @@ typedef struct
 } details;
 int main()
 {
+    /*
+    int n;
+    printf("Enter the number of drivers\n");
+    scanf(""%d",&n);
+    */
     int n = 3;
     details details[n];
     printf("Enter driver details  \n  \n");
