@@ -1,5 +1,5 @@
 /*
-0.IF AND ELSE :
+0.IF AND ELSE STATEMENT :
 1.The if/else statement executes a block of code if a specified condition is true.
 2.If the condition is false, another block of code can be executed.
 3.Write a program using if else statement.
