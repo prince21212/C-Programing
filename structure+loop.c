@@ -21,7 +21,7 @@ int main()
     /*
     int n;
     printf("Enter the number of drivers\n");
-    scanf(""%d",&n);
+    scanf("%d",&n);
     */
     int n = 3;
     details details[n];
