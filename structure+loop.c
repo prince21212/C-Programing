@@ -8,7 +8,6 @@ SOLUTION :-
 */
 
 #include <stdio.h>
-#include <stdio.h>
 typedef struct
 {
     char name[55];
