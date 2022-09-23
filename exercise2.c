@@ -60,3 +60,29 @@ int main()
     end:
     return 0;
 }
+/*
+OUTPUT:
+0.quiting program
+1.kmsTomiles     
+2.inchesTofoot   
+3.cmsToinches    
+4.poundTokgs     
+5.inchesTometers 
+press the number you want use
+2
+*******************Inches To Foot*******************
+Enter the value which you want to convert
+3
+3 inches = 0.250000 foots    
+0.quiting program
+1.kmsTomiles
+2.inchesTofoot
+3.cmsToinches
+4.poundTokgs
+5.inchesTometers
+press the number you want use
+0
+Quitting the program...
+*/
+
+ 
