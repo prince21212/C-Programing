@@ -1,0 +1,38 @@
+/*
+1.finding the factorial till 500.
+2.write a c program to finding factorial of any number.
+*/
+
+#include <stdio.h>
+long double fact(long n)
+{
+    long double a =1;
+    if(n==1 || n==0)
+    {
+        return 1;
+    }
+    for(long double i=1;i<=n;i++)
+    {
+        a=a*i;
+    }
+    return a;
+    /*else
+    {
+        return n * fact(n-1);
+    }
+    */
+}
+long double main()
+{
+   long double a;
+   printf("Enter the number\n");
+   scanf("%LF",&a);
+   printf("the factorial of %LF is %LF\n",a,fact(a));
+   return 0;
+}
+/*
+OUTPUT:
+Enter the number
+55
+the factorial of 55 is 12696403353658275924301844405547910612048885340572887946282875488103825408.000000
+*/
