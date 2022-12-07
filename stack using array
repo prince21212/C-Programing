@@ -1,0 +1,87 @@
+/*
+1.stack->A stack is a linear data structure, collection of items of the same type.
+
+Stack follows the Last In First Out (LIFO) fashion wherein the last element entered is the first one to be popped out.
+
+In stacks, the insertion and deletion of elements happen only at one endpoint of it.
+
+2.In this code we can push the element in stack and popped out and display the item of element using array.
+
+*/
+#include <stdio.h>
+#include<stdlib.h>
+#define MAX 7
+static int top=-1;
+int stack[MAX];
+int item;
+void push();
+void pop();
+void display();
+void main()
+{
+    int choice;
+    printf("*****implementing stack using array*****\n ");
+    printf("1.push 2.pop 3.display 4.exit\n");
+    do{
+        printf("enter your choice \n");
+        scanf("%d",&choice);
+        switch (choice)
+        {
+            case 1:
+                push();
+                break;
+            case 2:
+                 pop();
+                 break;
+            case 3:
+                 display();
+                 break;
+            case 4:
+                 exit(0);
+            default:
+                 printf("invalid choice\n");
+                 
+        }
+        
+    }
+    while(choice!=4);
+}
+void push()
+{
+ if(top==MAX-1)
+ {
+     printf("stack is full\n");
+     
+ }
+ else
+ {
+     printf("enter your item you want to pushed\n");
+     scanf("%d",&item);
+     top++;
+     stack[top]=item;
+ }
+}
+void pop()
+{
+    if(top==-1)
+    {
+        printf("stack is empty\n");
+        
+    }
+    else
+    {
+        printf("popped item is %d",stack[top]);
+    }
+}
+void display()
+{
+    int i;
+    if(top!=-1)
+    {
+        printf("stack elements:\n");
+        for(i=top;i>=0;i--)
+        {
+            printf("stack[%d]=%d",i,stack[top]);
+        }
+    }
+}
