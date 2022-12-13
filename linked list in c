@@ -1,0 +1,250 @@
+*/
+1.linked is a linear dat structure that stores a collection of data elements dynamically.
+2.nodes represents those data elements and each node connected through pointers links.
+3.each node consists two fields first for data and second for address.
+4.the last node of adress contains NULL.
+5.a linked list can grow and shrink its size as per reqirement.it does not waste memory;
+***************Types of Linked list********************
+1.singly linked list
+2.doubly linked list
+3.circular linked list
+4.header linked list
+*************------------***************
+To use the given program we can do all applications or operations of the singly linked list.  
+*/
+
+#include<stdio.h>
+#include<stdlib.h>
+void create();
+void display();
+void insert_beg();
+void insert_pos();
+void insert_end();
+void delete_beg();
+void delete_pos();
+void delete_end();
+
+struct node
+{
+    int data;
+    struct node* next;
+};
+struct node* head=NULL;
+
+int main()
+{
+    int choice;
+    while(1)
+    {
+    printf("0.create\n1.display\n2.insert_beg\n3.insert_pos\n4.insert_end\n5.delete_beg\n6.delete_pos\n7.delete_end\n8.exit\n");
+    
+    
+        printf("enter your choice\n");
+        scanf("%d",&choice);
+        switch(choice)
+        {
+            case 0:create();
+            break;
+            case 1:display();
+            break;
+            case 2:insert_beg();
+            break;
+            case 3:insert_pos();
+            break;
+            case 4:insert_end();
+            break;
+            case 5:delete_beg();
+            break;
+            case 6:delete_pos();
+            break;
+            case 7:delete_end();
+            break;
+            case 8:exit(0);
+            default:printf("invalid choice\n");
+            break;
+        }
+    }
+}
+    void create()
+    {
+        struct node* temp;
+        temp=(struct node*)malloc(sizeof(struct node));
+        printf("enter your data\n");
+        scanf("%d",&temp->data);
+        temp->next=NULL;
+        if(head==NULL)
+        {
+            head=temp;
+        }
+        else
+        {
+            struct node* ptr=head;
+            while(ptr->next!=NULL)
+            {
+                ptr=ptr->next;
+                
+            }
+            ptr->next=temp;
+        }
+    }
+    void display()
+    {
+      if(head==NULL)
+      {
+          printf("linked list is empty\n");
+          
+      }
+        else
+        {
+            printf("linked list\n ");
+            struct node *ptr=head;
+            while(ptr!=NULL)
+            {
+                printf("%d\n",ptr->data);
+                ptr=ptr->next;
+              
+            }
+            printf("\n");
+        }
+    }
+    void insert_beg()
+    {
+        struct node *temp;
+        temp =(struct node*)malloc(sizeof(struct node));
+         printf("enter your data\n");
+        scanf("%d",&temp->data);
+        temp->next=NULL;
+        if(head==NULL)
+        {
+            head=temp;
+            return;
+        }
+        else
+        {
+            temp->next=head;
+            head=temp;
+            
+        }
+    }
+    void insert_pos()
+    {
+        struct node* temp;
+        temp=(struct node*)malloc(sizeof(struct node));
+        printf("enter your data\n");
+        scanf("%d",&temp->data);
+        temp->next=NULL;
+        if(head==NULL)
+        {
+            head =temp;
+        }
+        else
+        {
+            struct node*prev_ptr;
+            struct node*ptr=head;
+            int pos,i;
+            printf("enter your choosen position\n");
+            scanf("%d",&pos);
+            for(i=0;i<pos;i++)
+            {
+                prev_ptr=ptr;
+                ptr=ptr->next;
+            }
+            temp->next=ptr;
+            prev_ptr->next=temp;
+        }
+    }
+    void insert_end()
+    {
+        struct node* temp;
+        printf("enter your data\n");
+        scanf("%d",&temp->data);
+        temp->next=NULL;
+        if(head==NULL)
+        {
+            head=temp;
+            return;
+        }
+        else
+        {
+            struct node*ptr=head;
+            while(ptr->next!=NULL)
+            {
+                ptr=ptr->next;
+                
+            }
+                ptr->next=temp;
+        }
+    }
+    void delete_beg()
+    {
+        if(head==NULL)
+        {
+            printf("linked list is empty\n");
+            return;
+        }
+        else 
+        {
+            struct node*ptr=head;
+            head=head->next;
+            free(ptr);
+            printf("node deleted\n");
+        }
+    }
+     void delete_pos()
+     {
+         int pos,count=0;
+         printf("enter your position\n");
+         scanf("%d",&pos);
+         struct node*ptr=head;
+         if(head==NULL)
+         {
+             printf("linked list is empty\n");
+             return;
+         }
+         else if(pos==count)
+         {
+             ptr=head;
+             head=ptr->next;
+             free(ptr);
+         }
+         else
+         {
+             struct node *prev_ptr;
+             for(count=0;count<pos;count++)
+             {
+                 prev_ptr=ptr;
+                 ptr=ptr->next;
+                 prev_ptr->next=ptr->next;
+                 free(ptr);
+             }
+         }
+         
+     }
+     void delete_end()
+     {
+         if(head==NULL)
+         {
+             printf("linked list is empty\n");
+             return;
+         }
+         else if(head->next==NULL)
+         {
+             struct node*ptr=head;
+             head=ptr->next;
+             free(ptr);
+         }
+         else
+         {
+             struct node*ptr=head;
+             struct node* prev_ptr=NULL;
+             while(ptr->next!=NULL)
+             {
+                prev_ptr=ptr;
+                 ptr=ptr->next;
+             }
+             prev_ptr->next=NULL;
+             free(ptr);
+             printf("last node deleted\n");
+         }
+     }
+
