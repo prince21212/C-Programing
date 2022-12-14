@@ -1,0 +1,101 @@
+/*
+1.stack:- stack is a linear fata structure in which operation is performed by the top of the stack.
+2.it performed last in first out(LIFO) operation.
+3.The give program is based on stack's all operations using linked list.
+*/
+#include<stdio.h>
+#include<stdlib.h>
+void push();
+void pop();
+void display();
+void peek();
+struct node{
+    int data;
+    struct node* next;
+};
+struct node* top=0;
+void main()
+{
+    int choice;
+    
+        while(1){
+        printf("1.push in stack\n2.pop from stack\n3.display stack elements\n4.exit()\n5.peek top data\n");
+        printf("enter your choice\n");
+        scanf("%d",&choice);
+        switch(choice)
+        {
+            case 1:push();
+            break;
+            case 2:pop();
+            break;
+            case 3:display();
+            break;
+            case 4:exit(0);
+            break;
+            case 5:peek();
+            break;
+            default:
+            printf("invalid choice\n");
+        }
+        
+    }
+}
+void push()
+{
+    int item;
+    struct node*new_n;
+    new_n=(struct node*)malloc(sizeof(struct node));
+    printf("enter your element item\n");
+    scanf("%d",&new_n->data);
+    new_n->next=top;
+    top=new_n;
+}
+void display()
+
+{
+    struct node*temp;
+    temp=top;
+    if(top==0)
+    {
+        printf("stack is empty\n");
+    }
+    else
+    {
+        while(temp!=0)
+        {
+            printf("item:%d\n",temp->data);
+            temp=temp->next;
+        }
+       
+    }
+}
+void peek()
+{
+    struct node*temp;
+    temp=top;
+    if(top==0)
+    {
+        printf("empty stack\n");
+        
+    }
+    else
+    {
+        printf("top most element: %d\n",temp->data);
+    }
+}
+void pop()
+{
+    struct node* temp;
+    temp=top;
+    if(top==0)
+    {
+        printf("underflow\n");
+        
+    }
+    else
+    {
+        printf("popped element : %d\n",top->data);
+        top=top->next;
+        free(temp);
+    }
+}
