@@ -1,0 +1,37 @@
+/*
+1.dynamically find the factorial value of nth number.
+*/
+
+#include<stdio.h>
+//dynammic approach
+//time complexity 0(n)
+long double fact(int n)
+{
+ int i,ans=0;
+  
+ int fact[n];
+ fact[1]=1;
+  for(i=2;i<=n;++i)
+  {
+      fact[i]=fact[i-1]*i;
+      ans=fact[i];
+     
+  }
+  return ans;
+  //recursive and general approach
+  //time complexityo(n²)
+// if(n==0 || n==1)
+// {
+//     return 1;
+// }
+// else
+// return n*fact(n-1);
+}
+int main()
+{
+    int n;
+    scanf("%d",&n);
+    fact(n);
+    printf("%Lf",(long double) fact(n));
+    return 0;
+}
