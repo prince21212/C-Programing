@@ -1,0 +1,32 @@
+#include<stdio.h>
+int lin_search(int arr[],int size,int key)
+{
+    int i,temp;
+    for(i=0;i<=size;++i)
+    {
+        if(key==arr[i])
+        {
+            temp=i;
+            return temp;
+        }
+    }
+    return -1;
+}
+void main()
+{
+    int size=3,i;
+    int key=32;
+    int arr[size];
+    printf("enter the element of array\n");
+   for(i=0;i<=3;i++)
+   {
+       scanf("%d",&arr[i]);
+   }
+   int ans=lin_search(arr,size,key);
+   if(ans!=-1)
+   {
+       printf("key found at : %d location",ans);
+   }
+   else
+   printf("key not found");
+}
