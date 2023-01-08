@@ -4,15 +4,14 @@ using namespace std;
 
 int main ()
 {
-	int x;
-	while(1)
-	{
-	cout<<"enter the value\n";
+	int x,i;
+		cout<<"enter the value\n";
 	cin >>x;
+	for(i=1;i<=x;i++)
+	{
 	double result;
-
-	result = log10(x);
-	cout << "log10(x) = " << result << endl;
+    result = log2(i);
+	cout << "log2"<<"("<<i<<")"<<" = "<< result << endl;
 	}
 	return 0;
 }
